@@ -1,0 +1,105 @@
+span.important-text {
+  color: #f4b454;
+}
+
+li::marker {
+  color: #f4b454;
+}
+
+#crown {
+  white-space: pre-wrap;
+  font-size: 90%;
+}
+
+#intro .svg-logo:nth-child(1) {
+  width: 50px;
+  height: 50px;
+}
+
+#intro .svg-logo:nth-child(2) {
+  width: 150px;
+  height: 150px;
+}
+
+#intro .svg-logo:nth-child(3) {
+  width: 250px;
+  height: 250px;
+}
+
+#intro .svg-logo:nth-child(4) {
+  width: 350px;
+  height: 350px;
+}
+
+img.bitmap-vs-svg {
+  background-color: white;
+  width: 70%;
+}
+
+#traffic-light {
+  font-size: 65%;
+}
+
+img.rocket {
+  width: 200px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  gap: 130px;
+}
+
+#basic-shapes code {
+  white-space: nowrap;
+  width: max-content;
+  font-size: 12px;
+}
+
+#basic-shapes td {
+  padding: 0;
+}
+
+#svg-on-html .svg-logo {
+  width: 200px;
+}
+
+#svg-on-html .html-logo {
+  width: 400px;
+}
+
+#bg-image .bulb {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background-image: url('./assets/light-bulb.svg');
+}
+
+#mask-image .bulb {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background-color: grey;
+  -webkit-mask-image: url('./assets/light-bulb.svg');
+	mask-image: url('./assets/light-bulb.svg');
+}
+
+#mask-image .bulb:hover {
+  background-color: lime;
+}
+
+.bulb {
+  fill: #cccccc;
+}
+
+.bulb:hover {
+  fill: lime;
+}
+
+#sprites code {
+  font-size: 90%;
+}
+
+.doge {
+  width: 500px;
+}

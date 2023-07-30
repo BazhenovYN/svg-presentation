@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>SVG</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/atom-one-dark.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section id="intro">
+				<h2><span class="important-text">S</span>calable <span class="important-text">V</span>ector <span
+						class="important-text">G</span>raphics</h2>
+				<div>
+					<img src="./assets/SVG_Logo.svg" alt="svg-logo" class="svg-logo">
+					<img src="./assets/SVG_Logo.svg" alt="svg-logo" class="svg-logo">
+					<img src="./assets/SVG_Logo.svg" alt="svg-logo" class="svg-logo">
+					<img src="./assets/SVG_Logo.svg" alt="svg-logo" class="svg-logo">
+				</div>
+			</section>
+			<section>
+				<h2>Raster VS <span class="important-text">vector</span></h2>
+				<img src="./assets/bitmap_vs_svg.png" alt="bitmap-vs-svg" class="bitmap-vs-svg">
+			</section>
+			<section>
+				<section>
+					<h2>How to create an <span class="important-text">SVG</span> file?</h2>
+					<div class="flex-container">
+						<ul>
+							<li>Adobe Illustrator</li>
+							<li>Inkscape</li>
+							<li>Sketch</li>
+							<li>Figma</li>
+							<li>Affinity Designer</li>
+							<li>CorelDRAW</li>
+						</ul>
+						<img src="./assets/rocket.svg" alt="rocket" class="rocket">
+					</div>
+				</section>
+				<section>
+					<p>...or in any text editor</p>
+					<pre><code class="hljs xml">
+&lt;svg xmlns="http://www.w3.org/2000/svg"&gt;
+	&lt;!-- Write all the SVG code in here --&gt;
+&lt;/svg&gt;
+						</code></pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2><span class="important-text">Basic</span> shapes</h2>
+					<table id="basic-shapes">
+						<tbody>
+							<tr>
+								<td>Rectangle</td>
+								<td>
+									<pre>
+										<code class="hljs language-xml">
+&lt;rect x="60" y="10" width="30" height="30"/&gt;
+										</code>
+									</pre>
+								</td>
+							</tr>
+							<tr>
+								<td>Circle</td>
+								<td>
+									<pre>
+										<code class="hljs language-xml">
+&lt;circle cx="25" cy="75" r="20"/&gt;
+										</code>
+									</pre>
+								</td>
+							</tr>
+							<tr>
+								<td>Ellipse</td>
+								<td>
+									<pre>
+										<code class="hljs language-xml">
+&lt;ellipse cx="75" cy="75" rx="20" ry="5"/&gt;
+										</code>
+									</pre>
+								</td>
+							</tr>
+							<tr>
+								<td>Line</td>
+								<td>
+									<pre>
+										<code class="hljs language-xml">
+&lt;ellipse cx="75" cy="75" rx="20" ry="5"/&gt;
+										</code>
+									</pre>
+								</td>
+							</tr>
+							<tr>
+								<td>Polyline</td>
+								<td>
+									<pre>
+										<code class="hljs language-xml">
+&lt;polyline points="60, 110 65, 120 70, 115 75, 130 80, 125 85, 140 90, 135 95, 150 100, 145"/&gt;
+										</code>
+									</pre>
+								</td>
+							</tr>
+							<tr>
+								<td>Polygon</td>
+								<td>
+									<pre>
+										<code class="hljs language-xml">
+&lt;polygon points="50, 160 55, 180 70, 180 60, 190 65, 205 50, 195 35, 205 40, 190 30, 180 45, 180"/&gt;
+										</code>
+									</pre>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<p>For example</p>
+					<pre>
+						<code id="traffic-light" class="hljs language-xml">
+&lt;svg width="50" height="130" fill="white" xmlns="http://www.w3.org/2000/svg"&gt;
+	&lt;rect x="0" y="0" width="50" height="130" stroke="white" fill="transparent" stroke-width="2"/&gt;
+	&lt;circle cx="25" cy="25" r="20" fill="red"/&gt;
+	&lt;circle cx="25" cy="65" r="20" fill="yellow"/&gt;
+	&lt;circle cx="25" cy="105" r="20" fill="green"/&gt;
+&lt;/svg&gt;
+						</code>
+					</pre>
+					<img src="./assets/traffic-light.svg" alt="traffic-light">
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2><span class="important-text">&lt;Path&gt;</span> commands</h2>
+					<table>
+						<tbody>
+							<tr>
+								<td>MoveTo</td>
+								<td>M, m</td>
+							</tr>
+							<tr>
+								<td>LineTo</td>
+								<td>L, l, H, h, V, v</td>
+							</tr>
+							<tr>
+								<td>Cubic Bézier Curve</td>
+								<td>C, c, S, s</td>
+							</tr>
+							<tr>
+								<td>Quadratic Bézier Curve</td>
+								<td>Q, q, T, t</td>
+							</tr>
+							<tr>
+								<td>Elliptical Arc Curve</td>
+								<td>A, a</td>
+							</tr>
+							<tr>
+								<td>ClosePath</td>
+								<td>Z, z</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<p>For example</p>
+					<pre>
+						<code id="crown" class="hljs language-xml">
+&lt;svg class="svg" width="140" height="120"&gt;
+	&lt;path d="M 10,110 L 10,10 L 40,50 L 70,10 L 100,50 L 130,10 L 130,110 z" fill="gold" stroke="orange" stroke-width="5"/&gt;
+	&lt;circle cx="10" cy="110" r="5" fill="red"/&gt;
+&lt;/svg&gt;
+						</code>
+					</pre>
+					<svg class="svg" width="140" height="120">
+						<path d="M 10,110 L 10,10 L 40,50 L 70,10 L 100,50 L 130,10 L 130,110 z" fill="gold" stroke="orange" stroke-width="5"/>
+						<circle cx="10" cy="110" r="5" fill="red"/>
+				 </svg>
+				</section>
+			</section>
+			<section id="svg-on-html">
+				<section>
+					<h2>How to Embed <span class="important-text">SVG</span> into HTML?</h2>
+					<img src="./assets/SVG_Logo.svg" alt="svg-logo" class="svg-logo">
+					<img src="./assets/HTML_logo.svg" alt="html-logo" class="html-logo">
+				</section>
+				<section>
+					<p>1. Embedding SVG <span class="important-text">as images</span></p>
+					<img class="bulb" src="./assets/light-bulb.svg" alt="bulb">
+				</section>
+				<section>
+					<p>1.1 Using an <span class="important-text">&lt;img&gt;</span> tag</p>
+					<pre>
+						<code class="hljs language-xml">
+&lt;img src="path/to/svg/logo.svg" alt="logo" style="fill: lime;"&gt;
+						</code>
+					</pre>
+					<img class="bulb" src="./assets/light-bulb.svg" alt="bulb">
+				</section>
+				<section id="bg-image">
+					<p>1.2 Using a CSS property <span class="important-text">background-image</span></p>
+					<pre>
+						<code class="hljs language-css">
+.icon {
+	background-image: url(logo.svg);
+}
+
+.icon:hover {
+	background-color: lime; /* it does't work */
+}
+						</code>
+					</pre>
+					<div class="bulb"></div>
+				</section>
+				<section id="mask-image">
+					<p>1.3 Using a CSS property <span class="important-text">mask-image</span></p>
+					<pre>
+						<code class="hljs language-css">
+.icon {
+	background-color: grey;
+	-webkit-mask-image: url(logo.svg);
+	mask-image: url(logo.svg);
+}
+
+.icon:hover {
+	background-color: lime;
+}
+						</code>
+					</pre>
+					<div class="bulb"></div>
+				</section>
+				<section>
+					<p>2. Embedding SVG <span class="important-text">as inline element</span></p>
+					<svg fill="lime" width="100" height="100" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<title>lightbulb</title>
+						<path d="M12,2A7,7,0,0,0,8,14.74V17a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V14.74A7,7,0,0,0,12,2ZM9,21a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V20H9Z" />
+					</svg>
+				</section>
+				<section>
+					<p>2.1 Using <span class="important-text">inline</span> SVG in HTML5</p>
+					<pre>
+						<code class="hljs language-xml">
+&lt;body&gt;
+	&lt;svg viewBox="0 0 24 24" width="24" height="24"&gt;
+		&lt!-- paths, shapes, etc. --&gt;
+	&lt;/svg&gt; 
+&lt;/body&gt;						 
+						</code>
+					</pre>
+					<svg class="bulb" width="100" height="100" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<title>lightbulb</title>
+						<path d="M12,2A7,7,0,0,0,8,14.74V17a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V14.74A7,7,0,0,0,12,2ZM9,21a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V20H9Z" />
+					</svg>
+				</section>
+				<section id="sprites">
+					<p>2.2 Using an SVG <span class="important-text">sprites</span></p>
+					<pre>
+						<code class="hljs language-xml">
+&lt;svg style="display:none"&gt;
+	&lt;symbol id="example" viewBox="0 0 24 24" width="24" height="24"&gt;
+		&lt!-- paths, shapes, etc. --&gt;
+	&lt;/symbol&gt;
+&lt;/svg&gt;
+
+&lt;svg&gt;&lt;use href="#example"/&gt;&lt;/svg&gt;
+						</code>
+					</pre>
+					<svg class="bulb" width="100" height="100"><use href="#spite-bulb"/></svg>
+					<svg style="display: none;">
+						<symbol id="spite-bulb" width="100" height="100" viewBox="0 0 24 24">
+							<path d="M12,2A7,7,0,0,0,8,14.74V17a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V14.74A7,7,0,0,0,12,2ZM9,21a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V20H9Z" />
+						</symbol>
+					</svg>
+				</section>
+				<section>
+					<p>3. Embedding SVG with &lt;object&gt;, &lt;embed&gt;, &lt;iframe&gt; tags</p>
+					<p><span class="important-text">Not recomended</span></p>
+				</section>
+			</section>
+			<section>
+				<h2><span class="important-text">S</span>imple and <span class="important-text">v</span>ery <span class="important-text">g</span>raceful</h2>
+				<img src="./assets/doge.png" alt="doge" class="doge">
+			</section>
+			<section>
+				<h2><span class="important-text">Thank</span> you</h2>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
